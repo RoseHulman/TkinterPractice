@@ -82,6 +82,14 @@ def main():
     #      n = int(s)
     ####################################################################
 
+    my_entry_box = ttk.Entry(frame1)
+    my_entry_box.grid()
+
+    hello_goodbye_button = ttk.Button(frame1, text='Test for ok')
+    hello_goodbye_button['command'] = lambda: check_for_ok(my_entry_box)
+    hello_goodbye_button.grid()
+
+
     # ------------------------------------------------------------------
     # TODO: 8. As time permits, do other interesting GUI things!
     # ------------------------------------------------------------------
