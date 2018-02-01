@@ -43,13 +43,20 @@ def main():
     say_hello_button['command'] = lambda: print_hello()
 
     # ------------------------------------------------------------------
-    # TODO: 6. After reading and understanding the m4e module,
+    # Done: 6. After reading and understanding the m4e module,
     #   -- Put an Entry box on the Frame.
     #   -- Put a second Button on the Frame.
     #   -- Make this new Button, when pressed, print "Hello"
     #        on the Console if the current string in the Entry box
     #        is the string 'ok', but print "Goodbye" otherwise.
     # ------------------------------------------------------------------
+
+    my_entry_box = ttk.Entry(frame1)
+    my_entry_box.grid()
+
+    hello_goodbye_button = ttk.Button(frame1, text='Test for ok')
+    hello_goodbye_button['command'] = lambda: check_for_ok(my_entry_box)
+    hello_goodbye_button.grid()
 
     # ------------------------------------------------------------------
     # TODO: 7.
@@ -81,8 +88,18 @@ def main():
 
     root.mainloop()
 
+
 def print_hello():
     print('Hello')
+
+
+def check_for_ok(entry_box):
+    contents = entry_box.get()
+    if contents == 'ok':
+        print('Hello')
+    else:
+        print('Goodbye')
+
 # ----------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
 # ----------------------------------------------------------------------
