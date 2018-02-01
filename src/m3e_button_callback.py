@@ -22,8 +22,7 @@ def main():
     frame1.grid()
 
     print_stuff_button = ttk.Button(frame1, text='Print stuff')
-    print_stuff_button['command'] = (lambda:
-                                     do_stuff())
+    print_stuff_button['command'] = lambda: do_stuff()
     print_stuff_button.grid()
 
     root.mainloop()
