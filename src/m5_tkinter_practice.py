@@ -54,12 +54,12 @@ def main():
     my_entry_box = ttk.Entry(frame1)
     my_entry_box.grid()
 
-    hello_goodbye_button = ttk.Button(frame1, text='Check')
+    hello_goodbye_button = ttk.Button(frame1, text='check for ok')
     hello_goodbye_button['command'] = lambda: check_for_ok(my_entry_box)
     hello_goodbye_button.grid()
 
     # ------------------------------------------------------------------
-    # TODO: 7.
+    # Done: 7.
     #    -- Put a second Entry on the Frame.
     #    -- Put a third Button on the frame.
     #    -- Make this new Button respond to a button-press as follows:
@@ -85,10 +85,10 @@ def main():
     my_second_entry_box = ttk.Entry(frame1)
     my_second_entry_box.grid()
 
-    hello_goodbye_button = ttk.Button(frame1, text='')
-    hello_goodbye_button['command'] = lambda: check_for_ok(my_second_entry_box)
-    hello_goodbye_button.grid()
-
+    multiply_button = ttk.Button(frame1, text='Multiply')
+    multiply_button['command'] = lambda: multiply(my_entry_box,
+                                                  my_second_entry_box)
+    multiply_button.grid()
 
     # ------------------------------------------------------------------
     # TODO: 8. As time permits, do other interesting GUI things!
@@ -107,6 +107,14 @@ def check_for_ok(entry_box):
         print('Hello')
     else:
         print('Goodbye')
+
+
+def multiply(entry_box1, entry_box2):
+    contents1 = entry_box1.get()
+    contents2 = entry_box2.get()
+    for k in range(int(contents2)):
+        print(contents1)
+
 
 # ----------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
