@@ -54,7 +54,7 @@ def main():
     my_entry_box = ttk.Entry(frame1)
     my_entry_box.grid()
 
-    hello_goodbye_button = ttk.Button(frame1, text='Test for ok')
+    hello_goodbye_button = ttk.Button(frame1, text='Check')
     hello_goodbye_button['command'] = lambda: check_for_ok(my_entry_box)
     hello_goodbye_button.grid()
 
@@ -82,11 +82,11 @@ def main():
     #      n = int(s)
     ####################################################################
 
-    my_entry_box = ttk.Entry(frame1)
-    my_entry_box.grid()
+    my_second_entry_box = ttk.Entry(frame1)
+    my_second_entry_box.grid()
 
-    hello_goodbye_button = ttk.Button(frame1, text='Test for ok')
-    hello_goodbye_button['command'] = lambda: check_for_ok(my_entry_box)
+    hello_goodbye_button = ttk.Button(frame1, text='')
+    hello_goodbye_button['command'] = lambda: check_for_ok(my_second_entry_box)
     hello_goodbye_button.grid()
 
 
