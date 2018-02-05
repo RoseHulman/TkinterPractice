@@ -91,8 +91,14 @@ def main():
     multiply_button.grid()
 
     # ------------------------------------------------------------------
-    # TODO: 8. As time permits, do other interesting GUI things!
+    # Done: 8. As time permits, do other interesting GUI things!
     # ------------------------------------------------------------------
+    my_third_entry_box = ttk.Entry(frame1)
+    my_third_entry_box.grid()
+
+    convert_button = ttk.Button(frame1, text='Convert to C')
+    convert_button['command'] = lambda: changetemp(my_third_entry_box)
+    convert_button.grid()
 
     root.mainloop()
 
@@ -114,6 +120,11 @@ def multiply(entry_box1, entry_box2):
     contents2 = entry_box2.get()
     for k in range(int(contents2)):
         print(contents1)
+
+
+def changetemp(entry_box):
+    contents = entry_box.get()
+    print((int(contents)-32)*5/9, 'degrees F')
 
 
 # ----------------------------------------------------------------------
